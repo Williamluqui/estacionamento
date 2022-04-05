@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/saida.css">
     <title>Painel de cadastro</title>
 </head>
-<body>
+<body onload="mostraPatio()">
 
     <div id="page-container" >
         <header id="page-header" class="logo"> 
@@ -31,14 +31,34 @@
                     <div class="txt">
                         <p>Saida de Veiculos</p>
                       
-                        
+                        <div class="tabelaCarros">
+                            <div class="tabela" >
+                                
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Placa </th> 
+                                        <th>modelo</th> 
+                                        <th>Hora entrada</th>
+                                        <th>Finalizar</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="resultados"></tbody> 
+                                    
+                                   
+                                </table>
+                                <p id="remover" class="remover"></p>
+                            </div>
+                        </div>
+            
+                    </div>
                    
                  
                 </div>
   
           </div>
            </section>
-
+           <script src="app.js"></script>
         <footer >
             <strong> &copy; 2022 Projeto estacionamento - Todos direitos reservados |<a rel="noreferrer" target="_blank" href="https://wluqui.dev"> v.1.0 &#8734; wLuqui </strong></a>
 

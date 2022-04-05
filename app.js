@@ -1,9 +1,9 @@
-let horario = document.getElementById("hora");
+
 
 
 btnRegistro.addEventListener("click", ()=>{
   
-  entradaVeiculos()
+  entradaVeiculos();
 });
 
 let relogio = () => {
@@ -18,11 +18,6 @@ let relogio = () => {
     min = "0" + min;
   }
   return `${hora}:${min}`
-   
-   
-   
-  //  return hora.innerHTML = `Horario de Brasilia <p> ${horario} `;
-   
 }
 
 function entradaVeiculos(){
@@ -34,20 +29,62 @@ function entradaVeiculos(){
     hora:relogio(),
     
   }
-
+  
   if(localStorage.getItem('patio') === null){
     let carros =[];
     carros.push(carro);
     localStorage.setItem('patio', JSON.stringify(carros))
    
+   
   }else{
     let carros = JSON.parse(localStorage.getItem('patio'));
     carros.push(carro);
-    localStorage.setItem('patio', JSON.stringify(carros))
+    localStorage.setItem('patio', JSON.stringify(carros));
+    
     sucesso.innerHTML = 'Adicionado com Sucesso !';
     sucesso.style.background = 'green';
+    
   }
-   
+   document.getElementById('cadastro').reset(); 
 
 } 
+
+function apagarVeiculo(placa){
+  
+let carros = JSON.parse(localStorage.getItem('patio'));
+ for(let i = 0; i < carros.length; i++){
+   if(carros[i].placa == placa){
+     carros.splice(i, 1); // splice remove
+
+   }
+   localStorage.setItem('patio',JSON.stringify(carros));
+   remover.innerHTML = 'Carro removido do Patío!';
+   remover.style.background = 'red';
+   
+ }
+mostraPatio()
+
+}
     
+function mostraPatio(){
+    
+  let carros = JSON.parse( localStorage.getItem('patio'));
+  let carrosResultado = document.getElementById('resultados');
+  carrosResultado.innerHTML = '';   
+
+  for(let i = 0 ; i < carros.length;i++){
+    let modelo = carros[i].modelo;
+    let placa = carros[i].placa;
+    let hora = carros[i].hora;
+
+    carrosResultado.innerHTML += '<tr><td>' + placa +
+                                   '</td><td>'+ modelo +
+                                   '</td><td>' + hora +
+                                   '</td><td><button class="finalizar" onclick="apagarVeiculo(\''+placa+'\')">Excluir</button></td>' +
+                                   '</tr>';
+     }
+
+     
+}
+ 
+                               

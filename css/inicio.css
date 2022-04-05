@@ -84,19 +84,40 @@ a{
     grid-column: 2 ;
     grid-column-end: 4;
 }
-.ultimas-saidas{
+.tabela{
     display: grid;
     justify-content: right;
 }
 
 
 table, th, td {
-    
+    border-spacing: 0px;
+    border-collapse: collapse;
     text-transform: uppercase; 
-    border: 1px solid rgba(0, 0, 0, 0.164);
-    width: 400px;
+    width: 600px;
     text-align: center;
 }
+
+.tabela {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .tabela td, .tabela th {
+    padding: 8px;
+  }
+  
+  .tabela tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .tabela tr:hover {background-color: #ddd;}
+  
+  .tabela th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+  }
 /* BOTAO SAIR  */
 
 .btn-sair {
@@ -130,7 +151,9 @@ table, th, td {
     transition: 80ms;
 }
 
-
+.finalizar{
+    display: none;
+}
 
 footer{
     display: flex;

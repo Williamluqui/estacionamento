@@ -32,15 +32,23 @@
                         
                         <p id="txt">Entrada de Veiculos</p>
                        
-                        <form action="cadastro" class="cadastro">
+                        <form action="cadastro" class="cadastro" id="cadastro">
+                            <div class="divPlaca">
                             <label for=""> Placa: 
                             <input type="text"  placeholder="" name="user" class="placa" id="placa" required maxlength="8">
                             </label>
+                            </div>
+                            <div class="divmodelo">
                             <label for=""> Modelo:
                             <input type="text"  placeholder="" id="modelo" maxlength="10">
                             </label>
+                            </div>
+                            <div class="btn">
                             <button class="btnRegistro" id="btnRegistro" type="button" >Registrar Entrada</button>
-                            <p id="sucesso" class="sucesso1"></p>
+                            
+                           </div>
+                           <p id="sucesso" class="sucesso1"></p>
+                      </div>     
                     </form>
                    
                  

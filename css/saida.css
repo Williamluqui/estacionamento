@@ -77,19 +77,43 @@ a {
   justify-content: right;
 }
 .txt p {
-   margin-bottom: 200px;
+  display: flex;
+  justify-content: center;
+   margin-bottom: 30px;
     color: red;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 
 table,
 th,
 td {
   text-transform: uppercase;
-  border: 1px ridge rgba(0, 0, 0, 0.349);
-  width: 400px;
   text-align: center;
+  border-spacing: 0px;
 }
+.tabela {
+  border-collapse: collapse;
+  width: 100%;
+  min-width:300px;
+  cursor: pointer;
+}
+
+.tabela td, .tabela th {
+  padding: 8px;
+}
+
+.tabela tr:nth-child(even){background-color: #eae8e8;}
+
+.tabela tr:hover {background-color: rgb(199, 199, 199);}
+
+.tabela th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
+
 /* BOTAO SAIR  */
 
 .btn-sair {
@@ -121,6 +145,67 @@ td {
   box-shadow: #ff5454 0px 0px 0px 0px;
   transform: translateY(1px);
   transition: 80ms;
+}
+
+.finalizar {
+  width: 4.2rem;
+  height: 1.7rem;
+  margin-right: 50px;
+  margin-left: 50px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 0;
+  background-color: rgba(253, 0, 0, 0.437);
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1px;
+  font-size: 15px;
+  transition: all 300ms ease;
+}
+.finalizar:hover {
+  letter-spacing: 2px;
+  background-color: rgb(220, 24, 34);
+  color: hsl(0, 0%, 100%);
+}
+
+.finalizar:active {
+  letter-spacing: 1px;
+  background-color: rgb(220, 24, 24);
+  color: hsl(0, 0%, 100%);
+  box-shadow: #ff5454 0px 0px 0px 0px;
+  transform: translateY(1px);
+  transition: 80ms;
+}
+
+#remover{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: remover 2s both ;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #f5f5f5;
+  height: 30px;
+  padding-left: 9px;
+  margin-top: 20px;
+  border-radius: 2px;
+
+}
+@keyframes remover{
+  0%{
+    transform: translateX(100%);
+  }
+  40%{
+    transform: translatex(-10%);
+  }
+  80%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+  
+
+
 }
 
 footer {
