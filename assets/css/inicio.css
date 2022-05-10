@@ -19,8 +19,7 @@ a{
 
 #page-container {
     display: grid;
-   
-    grid-template-columns: 250px 1fr 1fr;
+    grid-template-columns: 0.4fr 1fr 1fr;
     grid-template-rows: 70px auto 812px;
     
     
@@ -39,7 +38,7 @@ a{
 
 .menu {
     background-color: #0665ff77;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 15px 15px 0px;
 
     padding-left: 5px;
     font-weight: 400;
@@ -72,19 +71,20 @@ a{
 }
 .conteudo {
     display: grid;
-    justify-content: center;
+    
     padding-right: 30px;
-    padding-top: 40px;
-   
-    grid-row: 3;
-    grid-column: 2 ;
+    padding-top:90px;
+    grid-row:3;
+    grid-column: 2;
     grid-column-end: 4;
 }
+
 .tabela{
     display: grid;
-    justify-content: right;
+    grid-area: tabela;
+    justify-content: center;
+  
 }
-
 
 table, th, td {
     border-spacing: 0px;
@@ -93,21 +93,22 @@ table, th, td {
     width: 600px;
     text-align: center;
 }
-
 .tabela {
     border-collapse: collapse;
     width: 100%;
+    grid-row:1;
+    grid-column: 2;
+    grid-column-end: 4;
   }
-  
-  .tabela td, .tabela th {
+.tabela td, .tabela th {
     padding: 8px;
   }
   
-  .tabela tr:nth-child(even){background-color: #f2f2f2;}
+.tabela tr:nth-child(even){background-color: #f2f2f2;}
   
-  .tabela tr:hover {background-color: #ddd;}
+.tabela tr:hover {background-color: #ddd;}
   
-  .tabela th {
+.tabela th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
@@ -121,9 +122,6 @@ table, th, td {
     grid-column-start:3;
     grid-column-end: 4;
 }
-
-
-
 .btn-sair {
     width: 3.5rem;
     height: 1.7rem;
@@ -188,4 +186,8 @@ footer{
 
 
 } 
-
+.disclaimer {
+    /*RETIRAR IMG WEBHOST*/
+    display:none;
+    position:relative;
+  }
